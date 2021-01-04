@@ -1,20 +1,21 @@
 import React from 'react';
-import { View, StyleSheet, Text, TextInput, Button } from 'react-native';
+import { View, StyleSheet, Text, Button } from 'react-native';
 import Card from '../components/Card';
-
+import Colors from '../constants/Colors';
+import Input from '../components/Input';
 const StartGameScreen = () => {
 	return (
 		<View style={styles.screen}>
 			<Text style={styles.title}>Start a New Game</Text>
 			<Card style={styles.inputContainer}>
 				<Text>Select A Number</Text>
-				<TextInput />
+				<Input style={styles.input} />
 				<View style={styles.buttonContainer}>
 					<View style={styles.button}>
-						<Button title="Reset" onPress={() => {}} color="#c717fc" />
+						<Button title="Reset" onPress={() => {}} color={Colors.accent} />
 					</View>
 					<View style={styles.button}>
-						<Button title="Confirm" onPress={() => {}} color="#f7287b" />
+						<Button title="Confirm" onPress={() => {}} color={Colors.primary} />
 					</View>
 				</View>
 			</Card>
@@ -45,6 +46,10 @@ const styles = StyleSheet.create({
 	},
 	button: {
 		width: '40%',
+	},
+	input: {
+		width: 50,
+		textAlign: 'center',
 	},
 });
 
